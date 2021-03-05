@@ -22,10 +22,10 @@ goto home
 	goto restartprompt
 
 :restartprompt
-set /p select=Would you like to restart now? 
+set /p select=Would you like to shut down now? 
 if %select%==yes (
 	echo Ok, shutting down
-	shutdown /p /r
+	shutdown /p
 )
 if %select%==no (
 	echo Ok, Exiting now
