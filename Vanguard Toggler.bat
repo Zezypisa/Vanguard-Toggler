@@ -22,7 +22,7 @@ goto home
 	goto restartprompt
 
 :restartprompt
-set /p select=Would you like to shut down now? 
+set /p select=Would you like to shutdown now? 
 if %select%==yes (
 	echo Ok, shutting down
 	shutdown /p
