@@ -4,6 +4,9 @@ cls
 :home
 cls
 echo Vanguard Toggler created by Zezypisa
+echo Anticheats currently running are displayed under this message
+sc query vgk
+sc query vgc
 set /p select=Would you want to stop or start vanguard? 
 if "%select%" == "start" goto startVG
 if "%select%" == "stop" goto stopVG
