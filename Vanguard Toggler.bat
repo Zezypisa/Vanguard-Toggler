@@ -4,14 +4,14 @@ cls
 :home
 cls
 echo Vanguard Toggler created by Zezypisa
+echo Make sure to run this with Administrator, or it will not work
 echo Anticheats currently running are displayed under this message
-sc query vgk
-sc query vgc
-set /p select=Would you want to stop or start vanguard? 
+set /p select=Would you want to stop or start vanguard? (start \ stop \ display \ exit): 
 if "%select%" == "start" goto startVG
 if "%select%" == "stop" goto stopVG
+if "%select%" == "display" goto displayVG
 if "%select%" == "exit" exit
-echo Not a valid option. start \ stop \ exit
+echo Not a valid option. (start \ stop \ display \ exit)
 pause
 goto home
 
@@ -23,9 +23,14 @@ goto home
 	sc config vgk start=disabled 
 	sc config vgc start=disabled
 	goto restartprompt
+:displayVG
+	sc query vgk
+	sc query vgc
+	pause
+	goto home
 
 :restartprompt
-set /p select=Would you like to shutdown now? 
+set /p select=Would you like to shutdown now? (yes \ no): 
 if %select%==yes (
 	echo Ok, shutting down
 	shutdown /p
@@ -35,6 +40,6 @@ if %select%==no (
 	pause
 	exit
 )
-echo Not a valid option. yes \ no
+echo Not a valid option. (yes \ no)
 pause
 goto restartprompt
