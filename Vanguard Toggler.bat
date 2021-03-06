@@ -5,7 +5,6 @@ cls
 cls
 echo Vanguard Toggler created by Zezypisa
 echo Make sure to run this with Administrator, or it will not work
-echo Anticheats currently running are displayed under this message
 set /p select=Would you want to stop or start vanguard? (start \ stop \ display \ exit): 
 if "%select%" == "start" goto startVG
 if "%select%" == "stop" goto stopVG
