@@ -29,13 +29,20 @@ goto home
 	goto home
 
 :restartprompt
-set /p select=Would you like to shutdown now? (yes \ no): 
-if %select%==yes (
-	echo Ok, Shutting down
+set /p select=What would you like to do now? (shutdown \ restart \ nothing): 
+if %select%==shutdown (
+	echo Ok, Shutting down now
 	shutdown /p
+	pause
 	exit
 )
-if %select%==no (
+if %select%==restart (
+	echo Ok, Restarting now, this will not be immediate 
+	shutdown /r
+	pause
+	exit
+)
+if %select%==nothing (
 	echo Ok, Exiting now
 	exit
 )
