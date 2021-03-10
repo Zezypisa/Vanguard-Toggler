@@ -31,12 +31,12 @@ goto home
 :restartprompt
 set /p select=Would you like to shutdown now? (yes \ no): 
 if %select%==yes (
-	echo Ok, shutting down
+	echo Ok, Shutting down
 	shutdown /p
+	exit
 )
 if %select%==no (
 	echo Ok, Exiting now
-	pause
 	exit
 )
 echo Not a valid option. (yes \ no)
