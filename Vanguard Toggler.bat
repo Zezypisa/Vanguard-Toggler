@@ -37,8 +37,8 @@ if %select%==shutdown (
 	exit
 )
 if %select%==restart (
-	echo Ok, Restarting now, this will not be immediate 
-	shutdown /r
+	echo Ok, Restarting now
+	shutdown /r /t 0 /f
 	pause
 	exit
 )
