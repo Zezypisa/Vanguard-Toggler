@@ -78,19 +78,14 @@ goto ValorantHome
 :RestartPrompt
 set /p select=What would you like to do now? (shutdown \ restart \ nothing): 
 if "%select%" =="shutdown" (
-	echo Ok, Shutting down now
 	shutdown /p
-	pause
 	exit
 )
 if "%select%" =="restart" (
-	echo Ok, Restarting now
 	shutdown /r /t 0 /f
-	pause
 	exit
 )
 if "%select%" =="nothing" (
-	echo Ok, Exiting now
 	exit
 )
 echo Not a valid option. (shutdown \ restart \ nothing)
