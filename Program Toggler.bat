@@ -2,11 +2,11 @@
 :NeutralStartup
 cls
 title Waiting for program
-set /p select=What program would you like to use? (EADesktop \ Valorant \ Exit): 
-if "%select%" == "EADesktop" goto EADesktopStartup
-if "%select%" == "Valorant" goto ValorantStartup
+set /p select=What program would you like to use? (eadesktop \ valorant \ exit): 
+if "%select%" == "eadesktop" goto EADesktopStartup
+if "%select%" == "valorant" goto ValorantStartup
 if "%select%" == "exit" exit
-echo Not a valid option. (EADesktop \ Valorant \ Exit)
+echo Not a valid option. (eadesktop \ valorant \ exit)
 pause
 goto NeutralStartup
 
@@ -77,22 +77,22 @@ goto ValorantHome
 
 :RestartPrompt
 set /p select=What would you like to do now? (shutdown \ restart \ nothing): 
-if %select%=="shutdown" (
+if "%select%" =="shutdown" (
 	echo Ok, Shutting down now
 	shutdown /p
 	pause
 	exit
 )
-if %select%=="restart" (
+if "%select%" =="restart" (
 	echo Ok, Restarting now
 	shutdown /r /t 0 /f
 	pause
 	exit
 )
-if %select%=="nothing" (
+if "%select%" =="nothing" (
 	echo Ok, Exiting now
 	exit
 )
-echo Not a valid option. (yes \ no)
+echo Not a valid option. (shutdown \ restart \ nothing)
 pause
 goto RestartPrompt
