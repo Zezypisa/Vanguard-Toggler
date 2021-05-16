@@ -30,12 +30,12 @@ pause
 goto EADesktopHome
 
 :EADesktopStart
-	sc start eabackgroundservice
 	sc config eabackgroundservice start=demand
+		sc start eabackgroundservice
 	goto RestartPrompt
 :EADesktopStop
+	sc config eabackgroundservice start=disabled
 	sc stop eabackgroundservice
-	sc config eabackgroundservice start=disabled 
 	goto RestartPrompt
 :EADesktopDisplay
 	sc query eabackgroundservice
@@ -62,16 +62,16 @@ pause
 goto ValorantHome
 
 :ValorantStart
-	sc start vgk
-	sc start vgc
 	sc config vgk start=system
 	sc config vgc start=demand
+	sc start vgk
+	sc start vgc
 	goto RestartPrompt
 :ValorantStop
-	sc stop vgk
-	sc stop vgc
 	sc config vgk start=disabled 
 	sc config vgc start=disabled
+	sc stop vgk
+	sc stop vgc
 	goto RestartPrompt
 :ValorantDisplay
 	sc query vgk
