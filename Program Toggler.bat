@@ -63,10 +63,14 @@ goto ValorantHome
 :ValorantStart
 	sc config "vgk" start=system
 	sc config "vgc" start=demand
+	sc start "vgk"
+	sc start "vgc"
 	goto RestartPrompt
 :ValorantStop
 	sc config "vgk" start=disabled 
 	sc config "vgc" start=disabled
+	sc stop "vgk"
+	sc stop "vgc"
 	goto RestartPrompt
 :ValorantDisplay
 	sc query "vgk"
