@@ -2,14 +2,14 @@
 :NeutralStartup
 cls
 title Program Toggler
-echo Program Toggler created by Zezypisa
+echo Program Toggler verified, used, and created by Zezypisa
 echo Make sure to run this with Administrator, or it will not work
-set /p select=What program would you like to use? (eadesktop \ valorant \ steam \ exit): 
+set /p select=What program would you like to use? [eadesktop\valorant\steam\exit]: 
 if "%select%" == "eadesktop" goto EADesktopStartup
 if "%select%" == "valorant" goto ValorantStartup
 if "%select%" == "steam" goto SteamStartup
 if "%select%" == "exit" exit
-echo Not a valid option. (eadesktop \ valorant \ steam \ exit)
+echo Not a valid option. [eadesktop\valorant\steam\exit]
 pause
 goto NeutralStartup
 
@@ -21,12 +21,12 @@ goto EADesktopHome
 
 :EADesktopHome
 cls
-set /p select=Would you want to stop or start EA background service? (start \ stop \ display \ exit): 
+set /p select=Would you want to stop or start EA background service? [start\stop\display\exit]: 
 if "%select%" == "start" goto EADesktopStart
 if "%select%" == "stop" goto EADesktopStop
 if "%select%" == "display" goto EADesktopDisplay
 if "%select%" == "exit" exit
-echo Not a valid option. (start \ stop \ display \ exit)
+echo Not a valid option. [start\stop\display\exit]
 pause
 goto EADesktopHome
 
@@ -51,12 +51,12 @@ goto ValorantHome
 
 :ValorantHome
 cls
-set /p select=Would you want to stop or start vanguard? (start \ stop \ display \ exit): 
+set /p select=Would you want to stop or start vanguard? [start\stop\display\exit]: 
 if "%select%" == "start" goto ValorantStart
 if "%select%" == "stop" goto ValorantStop
 if "%select%" == "display" goto ValorantDisplay
 if "%select%" == "exit" exit
-echo Not a valid option. (start \ stop \ display \ exit)
+echo Not a valid option. [start\stop\display\exit]
 pause
 goto ValorantHome
 
@@ -86,12 +86,12 @@ goto SteamHome
 
 :SteamHome
 cls
-set /p select=Would you want to stop or start steam client service? (start \ stop \ display \ exit): 
+set /p select=Would you want to stop or start steam client service? [start\stop\display\exit]: 
 if "%select%" == "start" goto SteamStart
 if "%select%" == "stop" goto SteamStop
 if "%select%" == "display" goto SteamDisplay
 if "%select%" == "exit" exit
-echo Not a valid option. (start \ stop \ display \ exit)
+echo Not a valid option. [start\stop\display\exit]
 pause
 goto SteamHome
 
@@ -111,7 +111,7 @@ goto SteamHome
 ::ENDPROMPT
 
 :RestartPrompt
-set /p select=What would you like to do now? (shutdown \ restart \ nothing): 
+set /p select=What would you like to do now? [shutdown\restart\nothing]: 
 if "%select%" =="shutdown" (
 	shutdown /p
 	exit
@@ -123,6 +123,6 @@ if "%select%" =="restart" (
 if "%select%" =="nothing" (
 	exit
 )
-echo Not a valid option. (shutdown \ restart \ nothing)
+echo Not a valid option. [shutdown\restart\nothing]
 pause
 goto RestartPrompt
