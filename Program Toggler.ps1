@@ -5,83 +5,98 @@ $confirmation = Read-Host "What program would you like to use? [valorant\eadeskt
 if ($confirmation -eq "valorant") {
     $confirmation = Read-Host "Would you want to stop or start vanguard? [start\stop\enable\disable\display]"
     if ($confirmation -eq "start") {
-        Start-Service -Name "vgk"
-        Start-Service -Name "vgc"
+        Start-Service "vgk"
+        Start-Service "vgc"
         Set-Service -Name "vgk" -StartupType Automatic
         Set-Service -Name "vgc" -StartupType Manual
         pause
+        exit
     }
     if ($confirmation -eq "stop") {
-        Stop-Service -Name "vgk" -force
-        Stop-Service -Name "vgc" -force
+        Stop-Service "vgk" -force
+        Stop-Service "vgc" -force
         Set-Service -Name "vgk" -StartupType Disabled
         Set-Service -Name "vgc" -StartupType Disabled
         pause
+        exit
     }
     if ($confirmation -eq "enable") {
         Set-Service -Name "vgk" -StartupType Automatic
         Set-Service -Name "vgc" -StartupType Manual
         pause
+        exit
     }
     if ($confirmation -eq "disable") {
         Set-Service -Name "vgk" -StartupType Disabled
         Set-Service -Name "vgc" -StartupType Disabled
         pause
+        exit
     }
     if ($confirmation -eq "display") {
         Get-Service -Name "vgk"
         Get-Service -Name "vgc"
         pause
+        exit
     }
 }
 if ($confirmation -eq "eadesktop") {
     $confirmation = Read-Host "Would you want to stop or start EA background service? [start\stop\enable\disable\display]"
     if ($confirmation -eq "start") {
-        Start-Service -Name "eabackgroundservice"
+        Start-Service "eabackgroundservice"
         Set-Service -Name "eabackgroundservice" -StartupType Manual
         pause
+        exit
     }
     if ($confirmation -eq "stop") {
-        Stop-Service -Name "eabackgroundservice" -force
+        Stop-Service "eabackgroundservice" -force
         Set-Service -Name "eabackgroundservice" -StartupType Disabled
         pause
+        exit
     }
     if ($confirmation -eq "enable") {
         Set-Service -Name "eabackgroundservice" -StartupType Manual
         pause
+        exit
     }
     if ($confirmation -eq "disable") {
         Set-Service -Name "eabackgroundservice" -StartupType Disabled
         pause
+        exit
     }
     if ($confirmation -eq "display") {
         Get-Service -Name "eabackgroundservice"
         pause
+        exit
     }
 }
 if ($confirmation -eq "steam") {
     $confirmation = Read-Host "Would you want to stop or start steam client service? [start\stop\enable\disable\display]"
     if ($confirmation -eq "start") {
-        Start-Service -Name "Steam Client Service"
+        Start-Service "Steam Client Service"
         Set-Service -Name "Steam Client Service" -StartupType Manual
         pause
+        exit
     }
     if ($confirmation -eq "stop") {
-        Stop-Service -Name "Steam Client Service" -force
+        Stop-Service "Steam Client Service" -force
         Set-Service -Name "Steam Client Service" -StartupType Disabled
         pause
+        exit
     }
     if ($confirmation -eq "enable") {
         Set-Service -Name "Steam Client Service" -StartupType Manual
         pause
+        exit
     }
     if ($confirmation -eq "disable") {
         Set-Service -Name "Steam Client Service" -StartupType Disabled
         pause
+        exit
     }
     if ($confirmation -eq "display") {
         Get-Service -Name "Steam Client Service"
         pause
+        exit
     }
 }
 if ($confirmation = "exit") {
