@@ -126,5 +126,3 @@ if "%select%" =="nothing" (
 echo Not a valid option. [shutdown\restart\nothing]
 pause
 goto RestartPrompt
-
-::test2
