@@ -127,4 +127,4 @@ echo Not a valid option. [shutdown\restart\nothing]
 pause
 goto RestartPrompt
 
-::test
+::test2
