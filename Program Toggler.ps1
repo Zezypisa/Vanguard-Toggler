@@ -14,8 +14,8 @@ function Exit-Prompt {
 }
 
 $host.UI.RawUI.WindowTitle = "Program Toggler Script"
-Write-Host "Program Toggler verified safe, used, and created by Zezypisa"
-Write-Host "Make sure to run this with Administrator, or it will not work"
+Write-Host "Program Toggler verified safe, used, and created by Zezypisa."
+Write-Host "Make sure to run this with Administrator, or it will not work."
 $confirmation = Read-Host "What program would you like to use? [valorant\eadesktop\steam\exit]"
 if ($confirmation -eq "valorant") {
     $confirmation = Read-Host "Would you want to stop or start vanguard? [start\stop\enable\disable\display]"
