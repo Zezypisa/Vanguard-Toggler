@@ -24,7 +24,7 @@ if ($confirmation -eq "valorant") {
         cmd /c sc config "vgc" start=demand
 		cmd /c sc start "vgk"
         cmd /c sc start "vgc"
-        
+        Exit-Prompt
         pause
         exit
     }
