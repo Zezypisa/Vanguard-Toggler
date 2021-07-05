@@ -1,4 +1,4 @@
-# Program Toggler
+# Toggle Programs
 A Program Toggler tool for toggling mulitple annoying programs like EA Desktop, Vanguard, and others.
 
 Program Toggler verified safe, used, and created by Zezypisa.
